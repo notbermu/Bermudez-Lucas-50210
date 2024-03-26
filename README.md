@@ -1,4 +1,4 @@
-# Proyecto Final Bermudez+Lucas+50210
+# Proyecto Final Bermudez+Lucas+50210 - Football Blog
 
 ## Link al video mostrando la página
 https://youtu.be/tQpQjnQ3k00
