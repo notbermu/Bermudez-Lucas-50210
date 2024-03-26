@@ -1,5 +1,8 @@
 # Proyecto Final Bermudez+Lucas+50210
 
+##Link al video mostrando la página
+https://youtu.be/tQpQjnQ3k00
+
 ## Asegurarse de tirar los siguientes comandos para crear las bases de datos:
 1. `python manage.py makemigrations`
 2. `python manage.py migrate`
