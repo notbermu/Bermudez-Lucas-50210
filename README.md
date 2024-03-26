@@ -1,6 +1,6 @@
 # Proyecto Final Bermudez+Lucas+50210
 
-##Link al video mostrando la página
+## Link al video mostrando la página
 https://youtu.be/tQpQjnQ3k00
 
 ## Asegurarse de tirar los siguientes comandos para crear las bases de datos:
@@ -15,6 +15,10 @@ Las urls a las que tenemos que entrar manualmente son:
 2. 'PageApp/'
 
 Luego a las demás, se puede entrar por hipervínculos!!
+
+## Superuser:
+User : Admin
+Password : 1234
 
 
 
