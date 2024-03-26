@@ -11,6 +11,7 @@ from FootballApp.forms import *
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import PasswordChangeView
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
 
 # Create your views here.
 
@@ -155,7 +156,7 @@ def AddAvatar(request):
 class PlayerCreate(LoginRequiredMixin, CreateView):
     model = Player
     template_name = "Players/player_create.html"
-    fields = ["nombre", "apellido", "posicion", "pais", "equipo"]
+    fields = ["nombre", "posicion", "pais", "equipo"]
     success_url = reverse_lazy('ListaJugadores')
 
 class PlayerList(LoginRequiredMixin, ListView):
@@ -166,7 +167,7 @@ class PlayerList(LoginRequiredMixin, ListView):
 class PlayerUpdate(LoginRequiredMixin, UpdateView):
     model= Player
     template_name = "Players/player_update.html"
-    fields = ["nombre", "apellido", "posicion", "pais", "equipo"]
+    fields = ["nombre", "posicion", "pais", "equipo"]
     success_url = reverse_lazy('ListaJugadores')
 
 
@@ -179,6 +180,28 @@ class PlayerDelete(LoginRequiredMixin, DeleteView):
 class PlayerDetail(LoginRequiredMixin, DetailView):
     model = Player
     template_name = "Players/player_detail.html"
+
+
+
+@login_required
+def SearchPlayer(request):
+    
+    if request.GET:
+
+        if request.GET["nombre"] != "":
+            nombre = request.GET["nombre"]
+            players = Player.objects.filter(nombre__icontains=nombre)
+            message = f"Resultados de {nombre}"
+
+            return render(request, "Players/player_search.html", {"players":players, "mensaje":message})
+    
+        else:
+            message = "No buscaste nada"
+            return render(request, "Players/player_search.html", {"mensaje":message})          
+        
+    
+    return render(request, "Players/player_search.html")
+
 
 
 
@@ -212,6 +235,30 @@ class TeamDelete(LoginRequiredMixin, DeleteView):
 
 
 
+@login_required
+def SearchTeam(request):
+    
+    if request.GET:
+
+        if request.GET["nombre"] != "":
+            nombre = request.GET["nombre"]
+            teams = Team.objects.filter(nombre__icontains=nombre)
+            message = f"Resultados de {nombre}"
+
+            return render(request, "Teams/team_search.html", {"teams":teams, "mensaje":message})
+    
+        else:
+            message = "No buscaste nada"
+            return render(request, "Teams/team_search.html", {"mensaje":message})          
+        
+    
+    return render(request, "Teams/team_search.html")
+
+
+
+
+
+
 
 ##League
     
@@ -240,6 +287,29 @@ class LeagueDelete(LoginRequiredMixin, DeleteView):
     model = League
     template_name = "Leagues/league_delete.html"
     success_url = reverse_lazy('ListaLigas')
+
+
+@login_required
+def SearchLeague(request):
+    
+    if request.GET:
+
+        if request.GET["nombre"] != "":
+            nombre = request.GET["nombre"]
+            leagues = League.objects.filter(nombre__icontains=nombre)
+            message = f"Resultados de {nombre}"
+
+            return render(request, "Leagues/league_search.html", {"leagues":leagues, "mensaje":message})
+    
+        else:
+            message = "No buscaste nada"
+            return render(request, "Leagues/league_search.html", {"mensaje":message})          
+        
+    
+    return render(request, "Leagues/league_search.html")
+
+
+
 
 
 
@@ -271,3 +341,24 @@ class TournDelete(LoginRequiredMixin, DeleteView):
     model = Tourn
     template_name = "Tourns/tourn_delete.html"
     success_url = reverse_lazy('ListaTorneos')
+
+
+
+@login_required
+def SearchTourn(request):
+    
+    if request.GET:
+
+        if request.GET["nombre"] != "":
+            nombre = request.GET["nombre"]
+            tourns = Tourn.objects.filter(nombre__icontains=nombre)
+            message = f"Resultados de {nombre}"
+
+            return render(request, "Tourns/tourn_search.html", {"tourns":tourns, "mensaje":message})
+    
+        else:
+            message = "No buscaste nada"
+            return render(request, "Tourns/tourn_search.html", {"mensaje":message})          
+        
+    
+    return render(request, "Tourns/tourn_search.html")

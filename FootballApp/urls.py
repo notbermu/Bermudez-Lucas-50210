@@ -26,6 +26,8 @@ urlpatterns = [
     path('EditarJugador/<int:pk>', PlayerUpdate.as_view(), name="EditarJugadores"),
     path('EliminarJugador/<int:pk>', PlayerDelete.as_view(), name="EliminarJugadores"),
     path('DetalleJugador/<int:pk>', PlayerDetail.as_view(), name="DetalleJugadores"),
+    
+    path('BuscarJugador/', SearchPlayer, name="BuscarJugador"),
 
 
 
@@ -37,6 +39,8 @@ urlpatterns = [
     path('EliminarEquipo/<int:pk>', TeamDelete.as_view(), name="EliminarEquipos"),
     path('DetalleEquipo/<int:pk>', TeamDetail.as_view(), name="DetalleEquipo"),
 
+    path('BuscarEquipo/', SearchTeam, name="BuscarEquipo"),
+
 
 
     ##CRUD League
@@ -47,6 +51,8 @@ urlpatterns = [
     path('EliminarLiga/<int:pk>', LeagueDelete.as_view(), name="EliminarLigas"),
     path('DetalleLiga/<int:pk>', LeagueDetail.as_view(), name="DetalleLiga"),
 
+    path('BuscarLiga/', SearchLeague, name="BuscarLiga"),
+
 
     ##CRUD Tourn
     path('VerTorneos/', TournList.as_view(), name="ListaTorneos"),
@@ -54,5 +60,7 @@ urlpatterns = [
     path('EditarTorneo/<int:pk>', TournUpdate.as_view(), name="EditarTorneos"),
     path('EliminarTorneo/<int:pk>', TournDelete.as_view(), name="EliminarTorneos"),
     path('DetalleTorneo/<int:pk>', TournDetail.as_view(), name="DetalleTorneos"),
+
+     path('BuscarTorneo/', SearchTourn, name="BuscarTorneo"),
 
 ]

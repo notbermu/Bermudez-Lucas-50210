@@ -1,0 +1,39 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block Titulo %}
+
+Buscar Torneos
+
+{% endblock Titulo%}
+
+{% block cuerpo1 %}
+
+
+    <form action="/FA/BuscarTorneo/" method="GET">
+        
+        <input type="text" name="nombre">
+
+        <input type="submit" value="Buscar">
+
+    </form>
+    <br>
+    <br>
+
+    <p style="color: white;font-size: 150%;">{{mensaje}}</p>
+{% endblock cuerpo1 %}
+
+
+{% block cuerpo %}
+
+
+{% for tourns in tourns %}
+    <p style="color: white;">Nombre: {{tourns.nombre}}</p>
+    <p style="color: white;">Equipos: {{tourns.equipos}}</p>
+
+
+    <br>
+{% endfor %}
+
+{% endblock cuerpo %}

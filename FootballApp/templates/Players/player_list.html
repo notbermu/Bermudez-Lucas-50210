@@ -15,7 +15,6 @@
     {% for list in Jugadores %}
     
     <p style="color: white;">Nombre: {{list.nombre}}</p>
-    <p style="color: white;">Apellido: {{list.apellido}}</p>
     <p style="color: white;">Equipo: {{list.equipo}}</p>
 
     <a href="{% url 'DetalleJugadores' list.id %}">Ver Jugador</a>
@@ -28,6 +27,7 @@
 
 
     <a href="{% url 'CrearJugadores' %}">Crear Jugador</a>
+    <a href="{% url 'BuscarJugador' %}">Buscar Jugadores</a>
     
     
 

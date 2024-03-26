@@ -1,0 +1,40 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block Titulo %}
+
+Buscar Equipos
+
+{% endblock Titulo%}
+
+{% block cuerpo1 %}
+
+
+    <form action="/FA/BuscarEquipo/" method="GET">
+        
+        <input type="text" name="nombre">
+
+        <input type="submit" value="Buscar">
+
+    </form>
+    <br>
+    <br>
+
+    <p style="color: white;font-size: 150%;">{{mensaje}}</p>
+{% endblock cuerpo1 %}
+
+
+{% block cuerpo %}
+
+
+{% for teams in teams %}
+    <p style="color: white;">Nombre: {{teams.nombre}}</p>
+    <p style="color: white;">Pais: {{teams.pais}}</p>
+    <p style="color: white;">Liga: {{teams.liga}}</p>
+    <p style="color: white;">División :{{teams.division}}</p>
+
+    <br>
+{% endfor %}
+
+{% endblock cuerpo %}
