@@ -20,7 +20,16 @@ Luego a las demás, se puede entrar por hipervínculos!!
 User : Admin
 Password : 1234
 
-
+## Modelos:
+Tenemos 4 modelos principales:
+1. Jugador
+   Podemos indicarle nombre, país, posición y equipo.
+2. Equipo
+   Podemos indicarle nombre, país, liga y división.
+3. Liga
+   Podemos indicarle nombre, país y división.
+4. Torneo
+   Podemos indicarle nombre y cantidad de equipos.
 
 ## Funcionalidad:
 1. Registro
