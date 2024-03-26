@@ -19,11 +19,12 @@ Luego a las demás, se puede entrar por hipervínculos!!
 
 
 ## Funcionalidad:
-1.Registro
-2.Iniciar Sesión
-3.Cerrar Sesión
-4.Editar Usuario
-5.Agregar Avatar
+1. Registro
+2. Iniciar Sesión
+3. Cerrar Sesión
+4. Editar Usuario
+5. Agregar Avatar
+
 
 6.Ver/Crear/Editar/Eliminar/Buscar
 - Jugadores
