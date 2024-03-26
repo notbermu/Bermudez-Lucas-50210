@@ -1,0 +1,25 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block Titulo %}
+
+Bienvenidos a Futbol Champagne
+
+
+{% endblock Titulo %}
+
+{% block cuerpo1 %}
+
+<p style="color: whitesmoke; font-size: 150%;" >Este es un blog creado para que los usuarios registrados puedan interactuar con el entorno, podes añadir
+tus jugadores, equipos, ligas y torneos favoritos!!</p>
+
+<p style="color: aquamarine; text-align: center;">{{mensaje}}</p>
+
+{% endblock cuerpo1 %}
+
+{% block cuerpo %}
+
+<a href="{% url 'About' %}">Sobre Mi</a>
+
+{% endblock cuerpo %}

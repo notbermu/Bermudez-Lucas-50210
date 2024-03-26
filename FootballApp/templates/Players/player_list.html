@@ -1,0 +1,36 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block Titulo %}
+
+ Lista de Jugadores
+
+{% endblock Titulo %}
+
+{% block cuerpo %}
+
+<form action="" method="post"> {% csrf_token %}
+    
+    {% for list in Jugadores %}
+    
+    <p style="color: white;">Nombre: {{list.nombre}}</p>
+    <p style="color: white;">Apellido: {{list.apellido}}</p>
+    <p style="color: white;">Equipo: {{list.equipo}}</p>
+
+    <a href="{% url 'DetalleJugadores' list.id %}">Ver Jugador</a>
+    <a href="{% url 'EditarJugadores' list.id %}">Editar Jugador</a>
+    <a href="{% url 'EliminarJugadores' list.id %}">Eliminar Jugador</a>
+
+    <br>
+    <br>
+    {% endfor %}
+
+
+    <a href="{% url 'CrearJugadores' %}">Crear Jugador</a>
+    
+    
+
+</form>
+
+{% endblock cuerpo %}

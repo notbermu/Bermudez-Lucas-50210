@@ -1,0 +1,28 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block Titulo %}
+
+Eliminar Liga
+
+{% endblock Titulo %}
+
+{% block cuerpo1 %}
+
+<form action="" method="POST"> {% csrf_token %}
+
+     <p>¿Quieres borrar esta liga?</p>
+
+     <p style="color: white;">Nombre: {{league.nombre}}</p>
+     <p style="color: white;">País: {{league.contry}}</p>
+     <p style="color: white;">División: {{league.division}}</p>
+
+
+    <input type="submit" value="Borrar">
+    <br>
+    <a href="{% url 'ListaLigas' %}"> Volver </a>
+
+</form>
+
+{% endblock cuerpo1 %}

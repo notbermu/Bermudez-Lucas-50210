@@ -1,0 +1,21 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block Titulo %}
+
+Ver Liga
+
+{% endblock Titulo %}
+
+
+{% block cuerpo1 %}
+
+<p style="color: white;">Nombre: {{league.nombre}}</p>
+<p style="color: white;">País: {{league.contry}}</p>
+<p style="color: white;">División: {{league.division}}</p>
+
+
+<a href="{% url 'ListaLigas' %}">Volver</a>
+
+{% endblock cuerpo1 %}

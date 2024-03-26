@@ -1,0 +1,35 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block Titulo %}
+
+ Lista de Torneos
+
+{% endblock Titulo %}
+
+{% block cuerpo %}
+
+<form action="" method="post"> {% csrf_token %}
+    
+    {% for list in Torneos %}
+    
+    <p style="color: white;">Nombre: {{list.nombre}}</p>
+    <p style="color: white;">Equipos: {{list.equipos}}</p>
+
+    <a href="{% url 'DetalleTorneos' list.id %}">Ver Torneo</a>
+    <a href="{% url 'EditarTorneos' list.id %}">Editar Torneo</a>
+    <a href="{% url 'EliminarTorneos' list.id %}">Eliminar Torneo</a>
+
+    <br>
+    <br>
+    {% endfor %}
+
+
+    <a href="{% url 'CrearTorneos' %}">Crear Torneo</a>
+    
+    
+
+</form>
+
+{% endblock cuerpo %}
